@@ -42,13 +42,31 @@ const Index = props => (
 );
 
 Index.getInitialProps = async function() {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-  const data = await res.json();
+  // const res = await fetch('http://localhost:3000/api/photos');
+  // const data = await res.json();
+  const data = [{
+        "id": "1",
+        "url": "http://www.tvmaze.com/shows/1/under-the-dome",
+        "name": "Under the Dome",
+        "type": "Scripted"
+    },
+    {
+        "id": "2",
+        "url": "http://www.tvmaze.com/shows/1/under-the-dome",
+        "name": "Under the table",
+        "type": "Scripted"
+    },
+    {
+        "id": "3",
+        "url": "http://www.tvmaze.com/shows/1/under-the-dome",
+        "name": "MIchael is left",
+        "type": "Scripted"
+    }]
 
   console.log(`Show data fetched. Count: ${data.length}`);
 
   return {
-    shows: data.map(entry => entry.show)
+    shows: data.map(entry => entry)
   };
 };
 

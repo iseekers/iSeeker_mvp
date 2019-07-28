@@ -45,7 +45,7 @@ And here's the content.
 
 Post.getInitialProps = async function(context) {
   const { id } = context.query;
-  const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
+  const res = await fetch(`http://localhost:3000/api/photos/${id}`);
   const show = await res.json();
 
   console.log(`Fetched show: ${show.name}`);
